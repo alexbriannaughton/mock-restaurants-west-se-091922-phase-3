@@ -15,7 +15,7 @@ class Customer < ActiveRecord::Base
         Review.create(star_rating: rating, customer_id: self.id, restaurant_id: restaurant.id)
     end
 
-    def delete_review(restaurant)
+    def delete_reviews(restaurant)
         self.reviews.where("restaurant_id = ?", restaurant.id).destroy_all
     end
 end
